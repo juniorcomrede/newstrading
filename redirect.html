@@ -1,0 +1,49 @@
+// Fix: Rewrite without dependency on Tailwind, using inline styles to avoid "tailwind is not defined" errors.
+// This will render a clean "THIS STRATEGY IS NOT FOR PUBLIC" page using React with basic styling.
+
+import React from 'react';
+import { Lock } from "lucide-react";
+
+export default function PrivateStrategySite() {
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
+      backgroundColor: 'black',
+      color: 'white',
+      padding: '20px',
+      textAlign: 'center'
+    }}>
+      <Lock size={64} color="#facc15" style={{ marginBottom: '16px' }} />
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '16px' }}>THIS STRATEGY IS NOT FOR PUBLIC</h1>
+      <p style={{ maxWidth: '500px', color: '#d1d5db', fontSize: '1rem', marginBottom: '32px' }}>
+        You are looking at a well-structured, high-level strategy page designed with clarity and intention. Access is strictly restricted to those who understand the value of silence and secrecy.
+      </p>
+      <div style={{
+        background: 'linear-gradient(to bottom right, #111827, #1f2937)',
+        border: '1px solid #374151',
+        borderRadius: '16px',
+        padding: '24px',
+        maxWidth: '400px',
+        boxShadow: '0 10px 15px rgba(0,0,0,0.5)'
+      }}>
+        <p style={{ color: '#facc15', fontSize: '1.25rem', fontWeight: '600', marginBottom: '12px' }}>Confidential Area</p>
+        <p style={{ color: '#9ca3af', marginBottom: '16px' }}>
+          This strategy cannot be purchased, accessed, or shared publicly. It is designed for a select few who understand the consequences of exposure.
+        </p>
+        <button style={{
+          backgroundColor: '#facc15',
+          color: 'black',
+          fontWeight: 'bold',
+          padding: '10px 20px',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'not-allowed'
+        }}>Access Denied</button>
+      </div>
+    </div>
+  );
+}
